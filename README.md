@@ -2,7 +2,7 @@ Airbnb Clone Project Description
 
 An Airbnb Clone project is a full-stack web application that replicates the core functionalities of the popular Airbnb platform. It allows users to:
 
-List accommodations: Hosts can create listings, including descriptions, photos, amenities, location details, and pricing.
+Hosts can create listings, including descriptions, photos, amenities, location details, and pricing.
 Search and book accommodations: Guests can search for listings based on various criteria (location, date, price, amenities), view detailed information, and book reservations.
 Manage bookings: Hosts and guests can manage their bookings, including communication, cancellations, and reviews.
 The project typically involves building three main components:
