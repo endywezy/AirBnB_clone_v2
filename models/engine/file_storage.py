@@ -38,7 +38,7 @@ class FileStorage:
         Returns the __objects dictionary. 
         It provides access to all the stored objects.
         """
-        return  FileStorage.__objects
+        return FileStorage.__objects
 
 
     def save(self):
