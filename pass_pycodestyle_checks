@@ -1,7 +1,0 @@
-#!/usr/bin/python3
-"""
-beautiful code that passes the pycodestyle checks.
-"""
-
-def greet(name):
-    return f "hello", {name}! How are you doing? Python check passed
