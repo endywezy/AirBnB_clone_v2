@@ -8,6 +8,5 @@ from .base_model import BaseModel
 class Amenity(BaseModel):
     """
     Represent a name (str)
-    The name of the amenity.
     """
     name = ""

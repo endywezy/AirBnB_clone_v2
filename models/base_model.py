@@ -9,7 +9,6 @@ from datetime import datetime
 class BaseModel:
     """
     Defines all common attributes and methods for other classes
-    Also links BaseModel to FileStorage by using the variable storage
     """
     def __init__(self, *args, **kwargs):
         """

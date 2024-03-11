@@ -7,10 +7,7 @@ from .base_model import BaseModel
 
 class Review(BaseModel):
     """
-    Represent a review.
-    place_id (str): The Place id.
-    user_id (str): The User id.
-    text (str): The text of the review.
+    Represent a review with the attributes
     """
     place_id = ""
     user_id = ""
