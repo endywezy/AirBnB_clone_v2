@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #484848;
+    font-size: 14px;
+    font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+ /* Add your CSS for color contrast here */
+ body {
+    color: #333; /* Set text color to dark */
+    background-color: #fff; /* Set background color to light */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #000; /* Set header text color to black */
+}
+
+/* Add more color contrast styles as needed */
+
+/* Header tags for accessibility */
+header h1, header h2, header h3, header h4, header h5, header h6 {
+    display: none; /* Hide header tags visually but still accessible to screen readers */
+}
+@media only screen and (max-width: 600px) {
+    /* Adjust styles for smaller screens */
+    .filters {
+        display: block;
+    }
+
+    .filters button {
+        margin-top: 20px;
+    }
+
+    .places {
+        padding-top: 20px;
+    }
+
+    .places article {
+        margin-bottom: 20px;
+    }
+}
