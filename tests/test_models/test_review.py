@@ -1,19 +1,29 @@
 #!/usr/bin/python3
-"""
-Test suite for base_model
-"""
-import unittest
-from models.base_model import BaseModel
+""" """
+from tests.test_models.test_base_model import test_basemodel
 from models.review import Review
 
 
-class TestBaseModel(unittest.TestCase):
-    def test_str(self):
-        review = Review()
-        self.assertEqual(review.place_id, "")
-        self.assertEqual(review.user_id, "")
-        self.assertEqual(review.text, "")
+class test_review(test_basemodel):
+    """ """
 
-    def test_parent(self):
-        review = Review()
-        self.assertTrue(isinstance(review, BaseModel))
+    def __init__(self, *args, **kwargs):
+        """ """
+        super().__init__(*args, **kwargs)
+        self.name = "Review"
+        self.value = Review
+
+    def test_place_id(self):
+        """ """
+        new = self.value()
+        self.assertEqual(type(new.place_id), str)
+
+    def test_user_id(self):
+        """ """
+        new = self.value()
+        self.assertEqual(type(new.user_id), str)
+
+    def test_text(self):
+        """ """
+        new = self.value()
+        self.assertEqual(type(new.text), str)

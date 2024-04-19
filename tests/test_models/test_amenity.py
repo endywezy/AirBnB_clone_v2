@@ -1,17 +1,19 @@
 #!/usr/bin/python3
-"""
-Test suite for amenity class
-"""
-import unittest
-from models.base_model import BaseModel
+""" """
+from tests.test_models.test_base_model import test_basemodel
 from models.amenity import Amenity
 
 
-class TestBaseModel(unittest.TestCase):
-    def test_str(self):
-        amenity = Amenity()
-        self.assertEqual(amenity.name, "")
+class test_Amenity(test_basemodel):
+    """ """
 
-    def test_parent(self):
-        amenity = Amenity()
-        self.assertTrue(isinstance(amenity, BaseModel))
+    def __init__(self, *args, **kwargs):
+        """ """
+        super().__init__(*args, **kwargs)
+        self.name = "Amenity"
+        self.value = Amenity
+
+    def test_name2(self):
+        """ """
+        new = self.value()
+        self.assertEqual(type(new.name), str)

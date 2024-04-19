@@ -1,17 +1,19 @@
 #!/usr/bin/python3
-"""
-Test suite for base_model
-"""
-import unittest
-from models.base_model import BaseModel
+""" """
+from tests.test_models.test_base_model import test_basemodel
 from models.state import State
 
 
-class TestBaseModel(unittest.TestCase):
-    def test_attr(self):
-        state = State()
-        self.assertEqual(state.name, "")
+class test_state(test_basemodel):
+    """ """
 
-    def test_parent(self):
-        state = State()
-        self.assertTrue(isinstance(state, BaseModel))
+    def __init__(self, *args, **kwargs):
+        """ """
+        super().__init__(*args, **kwargs)
+        self.name = "State"
+        self.value = State
+
+    def test_name3(self):
+        """ """
+        new = self.value()
+        self.assertEqual(type(new.name), str)
