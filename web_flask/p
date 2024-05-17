@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#make all files in the current directory executable
+chmod +x *
+
+# Make README.md non-executable
+chmod -x README.md
+chmod -x __init__
+
+git config --global user.email "endywezy@gmail.com"
+ git config --global user.name "endywezy"
+
+# Add all files to git, commit changes, and push to the remote repository
+git add . && git commit -m 'Web Flask' && git push
