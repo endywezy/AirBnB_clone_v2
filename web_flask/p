@@ -5,7 +5,7 @@ chmod +x *
 
 # Make README.md non-executable
 chmod -x README.md
-chmod -x __init__
+chmod -x __init__.py
 
 git config --global user.email "endywezy@gmail.com"
  git config --global user.name "endywezy"
