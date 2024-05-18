@@ -4,6 +4,7 @@ A simple Flask web application with multiple routes.
 """
 
 from flask import Flask, render_template
+
 app = Flask(__name__)
 
 
@@ -56,7 +57,7 @@ def number_template(n):
     Route to display a HTML page only if n is an integer.
     Displays 'Number: n' inside the H1 tag in the body.
     """
-    return render_template('number.html', number=n)
+    return render_template('5-number.html', number=n)
 
 
 if __name__ == '__main__':
