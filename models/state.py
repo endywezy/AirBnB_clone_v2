@@ -14,7 +14,8 @@ if os.getenv('HBNB_TYPE_STORAGE') == 'db':
         __tablename__ = 'states'
         name = Column(String(128), nullable=False)
         cities = relationship(
-            "City", cascade="all, delete, delete-orphan", backref="states", lazy="joined")
+                "City", cascade="all, delete, delete-orphan",
+                backref="states", lazy="joined")
 
 else:
     from models.city import City
@@ -32,4 +33,3 @@ else:
                 if city.state_id == self.id:
                     city_list.append(city)
             return city_list
-
