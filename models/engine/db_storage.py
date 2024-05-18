@@ -73,4 +73,3 @@ class DBStorage:
 # Instance of the DBStorage class
 storage = DBStorage()
 storage.reload()
-
