@@ -2,10 +2,7 @@
 """
 Create a unique FileStorage instance for your application
 """
-from .engine.file_storage import FileStorage
-from os import detenv
-
-storage = FileStorage()
+from os import getenv
 
 storage_type = getenv("HBNB_TYPE_STORAGE")
 

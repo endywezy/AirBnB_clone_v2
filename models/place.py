@@ -3,8 +3,6 @@
 import os
 from models.base_model import BaseModel, Base
 from sqlalchemy import Table, Column, Integer, Float, String, ForeignKey
-from models.city import City
-from models.user import User
 from sqlalchemy.orm import relationship
 
 place_amenity = Table('place_amenity', Base.metadata,
@@ -50,7 +48,7 @@ class Place(BaseModel, Base):
         amenity_ids = []
 
     def __init__(self, *args, **kwargs):
-        """Instatntiates a new model"""
+        """Instantiates a new model"""
         from models.review import Review
         from models.amenity import Amenity
         super().__init__(*args, **kwargs)
@@ -82,7 +80,7 @@ class Place(BaseModel, Base):
 
         @amenities.setter
         def amenities(self, obj):
-            """Set amenities to class attrib"""
+            """Set amenities to class attribute"""
             from models.amenity import Amenity
             if isinstance(obj, Amenity):
                 if obj.id not in self.amenity_ids:
