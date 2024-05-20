@@ -1,0 +1,20 @@
+[0;1;32m●[0m mysql.service - MySQL Community Server
+     Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
+     Active: [0;1;32mactive (running)[0m since Mon 2024-05-20 01:41:28 WAT; 1min 39s ago
+    Process: 35960 ExecStartPre=/usr/share/mysql/mysql-systemd-start pre (code=exited, status=0/SUCCESS)
+   Main PID: 35968 (mysqld)
+     Status: "Server is operational"
+      Tasks: 37 (limit: 4453)
+     Memory: 369.4M
+     CGroup: /system.slice/mysql.service
+             └─35968 /usr/sbin/mysqld
+
+May 20 01:41:25 DESKTOP-7BKGB7N systemd[1]: Starting MySQL Community Server...
+May 20 01:41:26 DESKTOP-7BKGB7N mysqld[35968]: 2024-05-20T00:41:26.342834Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.36-0ubuntu0.22.04.1) starting as process 35968
+May 20 01:41:26 DESKTOP-7BKGB7N mysqld[35968]: 2024-05-20T00:41:26.368661Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+May 20 01:41:27 DESKTOP-7BKGB7N mysqld[35968]: 2024-05-20T00:41:27.358453Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+May 20 01:41:28 DESKTOP-7BKGB7N mysqld[35968]: 2024-05-20T00:41:28.434675Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+May 20 01:41:28 DESKTOP-7BKGB7N mysqld[35968]: 2024-05-20T00:41:28.434819Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+May 20 01:41:28 DESKTOP-7BKGB7N mysqld[35968]: 2024-05-20T00:41:28.678028Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+May 20 01:41:28 DESKTOP-7BKGB7N mysqld[35968]: 2024-05-20T00:41:28.687809Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.36-0ubuntu0.22.04.1'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  (Ubuntu).
+May 20 01:41:28 DESKTOP-7BKGB7N systemd[1]: Started MySQL Community Server.
