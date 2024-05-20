@@ -27,3 +27,15 @@ class State(BaseModel, Base):
                 if city.state_id == self.id:
                     city_list.append(city)
             return city_list
+
+if HBNB_TYPE_STORAGE != 'db':
+        @property
+        def cities(self):
+            """
+            Returns the list of City objects from storage linked to the current State.
+            """
+            cities_list = []
+            for city in models.storage.all(City).values():
+                if city.state_id == self.id:
+                    cities_list.append(city)
+            return cities_list
