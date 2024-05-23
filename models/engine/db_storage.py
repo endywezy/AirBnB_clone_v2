@@ -10,6 +10,7 @@ from models.city import City
 from models.place import Place
 from models.review import Review
 from models.amenity import Amenity
+import os
 
 
 class DBStorage:
@@ -19,11 +20,15 @@ class DBStorage:
 
     def __init__(self):
         """Instantiates a new model"""
-        import os
-        self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.format(
-            os.getenv('HBNB_MYSQL_USER'), os.getenv('HBNB_MYSQL_PWD'),
-            os.getenv('HBNB_MYSQL_HOST'), os.getenv('HBNB_MYSQL_DB')),
-            pool_pre_ping=True)
+        self.__engine = create_engine(
+            'mysql+mysqldb://{}:{}@{}/{}'.format(
+                os.getenv('HBNB_MYSQL_USER'),
+                os.getenv('HBNB_MYSQL_PWD'),
+                os.getenv('HBNB_MYSQL_HOST'),
+                os.getenv('HBNB_MYSQL_DB')
+            ),
+            pool_pre_ping=True
+        )
 
         if os.getenv('HBNB_ENV') == 'test':
             Base.metadata.drop_all(self.__engine)
@@ -49,7 +54,7 @@ class DBStorage:
         self.__session.add(obj)
 
     def save(self):
-        """commit all changes"""
+        """Commit all changes"""
         self.__session.commit()
 
     def delete(self, obj=None):
@@ -58,20 +63,19 @@ class DBStorage:
             self.__session.delete(obj)
 
     def reload(self):
-        """create all tables in the database"""
+        """Create all tables in the database"""
         Base.metadata.create_all(self.__engine)
         session_factory = sessionmaker(
-            bind=self.__engine, expire_on_commit=False)
-        Session = scoped_session(session_factory)
-        self.__session = Session()
+            bind=self.__engine, expire_on_commit=False
+        )
+        self.__session = scoped_session(session_factory)
 
     def close(self):
         """
         Calls remove() method on the private session attribute (self.__session)
-        or calls close() on the class Session.
         """
         self.__session.remove()
 
+
 # Instance of the DBStorage class
 storage = DBStorage()
-storage.reload()
